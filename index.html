@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Amigo secreto dos Fernandes ❤️</title>
+
+    <meta name="description" content="Amigo secreto dos Fernandes. Uma brincadeira especial para reunir a família.">
+
+    <meta name="theme-color" content="#103d2d">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="snow-container" aria-hidden="true"></div>
+
+    <!-- CABEÇALHO -->
+
+    <header class="header">
+
+        <a href="index.html" class="logo">
+            <span class="logo-icon">🎄</span>
+            <span>FERNANDES <strong>❤️</strong></span>
+        </a>
+
+        <span class="header-tag">EM FAMÍLIA</span>
+
+    </header>
+
+    <main class="container">
+
+        <!-- APRESENTAÇÃO -->
+
+        <section class="hero">
+
+            <div class="hero-decoration">✦</div>
+
+            <span class="eyebrow">
+                ✧ UMA TRADIÇÃO ESPECIAL ✧
+            </span>
+
+            <h1>
+                Amigo secreto
+                <span>dos Fernandes ❤️</span>
+            </h1>
+
+            <div class="christmas-divider">
+                <span>❄</span>
+            </div>
+
+            <div class="hero-gift">🎁</div>
+
+            <h2>Uma surpresa especial espera por você!</h2>
+
+            <p class="hero-description">
+                Uma brincadeira para reunir a família,
+                compartilhar carinho e criar boas lembranças.
+            </p>
+
+        </section>
+
+        <!-- PAINEL DO ORGANIZADOR -->
+
+        <section class="panel" id="organizer-panel">
+
+            <div class="section-heading">
+
+                <span class="section-icon">👨‍👩‍👧‍👦</span>
+
+                <div>
+                    <h2>Participantes</h2>
+                    <p>Adicione os familiares que participarão.</p>
+                </div>
+
+            </div>
+
+            <form id="participant-form">
+
+                <label for="participant-name">
+                    Nome do participante
+                </label>
+
+                <div class="input-group">
+
+                    <input
+                        type="text"
+                        id="participant-name"
+                        placeholder="Digite o nome do familiar"
+                        maxlength="60"
+                        autocomplete="off"
+                        required
+                    >
+
+                    <button type="submit" class="add-button">
+                        + Adicionar
+                    </button>
+
+                </div>
+
+            </form>
+
+            <div class="participant-counter">
+
+                <span>Lista de participantes</span>
+
+                <span id="participant-count">
+                    0 participantes
+                </span>
+
+            </div>
+
+            <ul id="participant-list" class="participant-list">
+
+                <li class="empty-list">
+                    Nenhum participante adicionado ainda.
+                </li>
+
+            </ul>
+
+            <div class="warning-message">
+                <span>💡</span>
+
+                <span>
+                    Confira todos os nomes antes de realizar o sorteio.
+                </span>
+            </div>
+
+            <button id="draw-button" class="draw-button" disabled>
+                🎁 REALIZAR SORTEIO
+            </button>
+
+            <p class="small-note">
+                O sorteio será realizado apenas uma vez.
+            </p>
+
+        </section>
+
+        <!-- RESULTADO DO ORGANIZADOR -->
+
+        <section id="results-panel" class="panel hidden">
+
+            <div class="success-icon">🎉</div>
+
+            <h2 class="results-title">
+                Sorteio realizado!
+            </h2>
+
+            <p class="results-description">
+                Tudo pronto! Agora você só precisa compartilhar
+                um único link com todos os familiares.
+            </p>
+
+            <div class="shared-link-box">
+
+                <div class="shared-link-heading">
+                    <span>🔗</span>
+
+                    <div>
+                        <strong>LINK ÚNICO DA FAMÍLIA</strong>
+
+                        <small>
+                            O mesmo endereço para todos os participantes.
+                        </small>
+                    </div>
+                </div>
+
+                <input
+                    type="text"
+                    id="shared-link"
+                    readonly
+                    aria-label="Link compartilhado do sorteio"
+                >
+
+                <button
+                    type="button"
+                    id="copy-link-button"
+                    class="draw-button"
+                >
+                    📋 COPIAR LINK
+                </button>
+
+                <button
+                    type="button"
+                    id="share-link-button"
+                    class="share-family-button"
+                >
+                    <span>WhatsApp</span>
+                    COMPARTILHAR COM A FAMÍLIA
+                </button>
+
+            </div>
+
+            <div class="important-message">
+
+                <span>🔒</span>
+
+                <div>
+                    <strong>Uma surpresa para cada pessoa!</strong>
+
+                    <p>
+                        Todos devem acessar o mesmo link e informar
+                        seu próprio nome para descobrir o resultado.
+                    </p>
+                </div>
+
+            </div>
+
+            <p class="small-note">
+                Guarde este link. Ele contém os resultados do sorteio.
+            </p>
+
+        </section>
+
+        <!-- PAINEL DO PARTICIPANTE -->
+
+        <section id="participant-result" class="panel result-panel hidden">
+
+            <div class="result-decoration">🎄</div>
+
+            <span class="result-eyebrow">
+                UMA SURPRESA ESPECIAL
+            </span>
+
+            <h2>Descubra seu amigo secreto!</h2>
+
+            <p class="result-message">
+                Digite seu nome exatamente como foi cadastrado
+                para descobrir quem você tirou.
+            </p>
+
+            <form id="lookup-form" class="lookup-form">
+
+                <label for="lookup-name">
+                    Seu nome
+                </label>
+
+                <input
+                    type="text"
+                    id="lookup-name"
+                    placeholder="Digite seu nome completo"
+                    maxlength="60"
+                    autocomplete="off"
+                    required
+                >
+
+                <button type="submit" class="draw-button">
+                    🎁 REVELAR MEU AMIGO SECRETO
+                </button>
+
+            </form>
+
+            <div
+                id="lookup-error"
+                class="lookup-error hidden"
+                role="alert"
+            ></div>
+
+            <div id="revealed-result" class="revealed-result hidden">
+
+                <div class="result-gift">🎁</div>
+
+                <p>Seu amigo secreto é...</p>
+
+                <div id="friend-name" class="friend-name"></div>
+
+                <p class="result-message">
+                    Prepare uma surpresa especial!
+                    Que nunca faltem carinho e alegria
+                    em nossa família. ❤️
+                </p>
+
+            </div>
+
+            <div class="result-footer">
+                AMIGO SECRETO DOS FERNANDES ❤️
+            </div>
+
+        </section>
+
+        <!-- MENSAGEM FINAL -->
+
+        <section class="footer-message">
+
+            <span>✧</span>
+
+            Que nunca faltem motivos para celebrar em família.
+
+            <span>✧</span>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        FEITO COM CARINHO · FERNANDES ❤️
+    </footer>
+
+    <!-- NOTIFICAÇÕES -->
+
+    <div
+        id="toast"
+        class="toast"
+        role="status"
+        aria-live="polite"
+    ></div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
