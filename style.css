@@ -1,0 +1,1121 @@
+:root {
+    --green-dark: #09291f;
+    --green: #103d2d;
+    --green-light: #1c5b43;
+    --green-bright: #287653;
+
+    --gold: #d9b66d;
+    --gold-light: #f3dfaa;
+
+    --red: #a9363d;
+
+    --white: #fffaf0;
+    --muted: #c4d3c8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            ellipse at top,
+            #245c43,
+            transparent 65%
+        ),
+        linear-gradient(
+            145deg,
+            #061c16,
+            #103c2d 55%,
+            #061c16
+        );
+
+    color: var(--white);
+
+    font-family: 'DM Sans', sans-serif;
+
+    overflow-x: hidden;
+}
+
+/* =====================================
+   NEVE
+===================================== */
+
+#snow-container {
+    position: fixed;
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+.snowflake {
+    position: absolute;
+
+    top: -20px;
+
+    color: white;
+
+    opacity: 0.55;
+
+    animation: snowfall linear infinite;
+}
+
+@keyframes snowfall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+
+/* =====================================
+   CABEÇALHO
+===================================== */
+
+.header {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 25px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    text-decoration: none;
+
+    color: var(--gold-light);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+.logo-icon {
+    font-size: 26px;
+}
+
+.logo strong {
+    color: white;
+}
+
+.header-tag {
+    color: var(--muted);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+/* =====================================
+   CONTAINER
+===================================== */
+
+.container {
+    width: 100%;
+
+    max-width: 760px;
+
+    margin: 35px auto;
+
+    padding: 0 20px;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+/* =====================================
+   APRESENTAÇÃO
+===================================== */
+
+.hero {
+    text-align: center;
+
+    padding: 60px 30px;
+
+    border: 1px solid rgba(217, 182, 109, 0.4);
+
+    border-radius: 18px;
+
+    background: rgba(4, 30, 22, 0.72);
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.hero-decoration {
+    position: absolute;
+
+    right: 35px;
+
+    top: 35px;
+
+    font-size: 35px;
+
+    color: var(--gold);
+
+    opacity: 0.6;
+}
+
+.eyebrow {
+    color: var(--gold);
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+}
+
+.hero h1 {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    margin-top: 25px;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(38px, 8vw, 65px);
+
+    line-height: 1.15;
+
+    font-weight: 600;
+}
+
+.hero h1 span {
+    margin-top: 5px;
+
+    color: var(--gold-light);
+
+    font-style: italic;
+
+    font-size: 0.75em;
+}
+
+.christmas-divider {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin: 30px auto;
+
+    color: var(--gold);
+}
+
+.christmas-divider::before,
+.christmas-divider::after {
+    content: "";
+
+    width: 75px;
+
+    height: 1px;
+
+    background: rgba(217, 182, 109, 0.5);
+}
+
+.hero-gift {
+    font-size: 52px;
+
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.hero h2 {
+    margin-top: 20px;
+
+    color: var(--gold-light);
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 24px;
+}
+
+.hero-description {
+    max-width: 440px;
+
+    margin: 18px auto 0;
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+/* =====================================
+   PAINÉIS
+===================================== */
+
+.panel {
+    margin-top: 30px;
+
+    padding: 30px;
+
+    border: 1px solid rgba(217, 182, 109, 0.3);
+
+    border-radius: 15px;
+
+    background: rgba(5, 32, 24, 0.88);
+
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.section-heading {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 28px;
+}
+
+.section-icon {
+    font-size: 30px;
+}
+
+.section-heading h2 {
+    color: var(--gold-light);
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 23px;
+}
+
+.section-heading p {
+    color: var(--muted);
+
+    font-size: 12px;
+
+    margin-top: 5px;
+}
+
+/* =====================================
+   FORMULÁRIO DE CADASTRO
+===================================== */
+
+#participant-form label,
+.lookup-form label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color: var(--white);
+}
+
+.input-group {
+    display: flex;
+
+    gap: 10px;
+}
+
+.input-group input,
+.lookup-form input {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 14px;
+
+    border: 1px solid rgba(217, 182, 109, 0.3);
+
+    border-radius: 7px;
+
+    background: #102f25;
+
+    color: white;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 13px;
+}
+
+.input-group input:focus,
+.lookup-form input:focus {
+    border-color: var(--gold);
+}
+
+.input-group input::placeholder,
+.lookup-form input::placeholder {
+    color: #92a99a;
+}
+
+.add-button {
+    padding: 0 20px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: var(--green-light);
+
+    color: white;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.add-button:hover {
+    background: var(--green-bright);
+}
+
+/* =====================================
+   CONTADOR
+===================================== */
+
+.participant-counter {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-top: 28px;
+
+    padding-bottom: 12px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+#participant-count {
+    color: var(--gold);
+}
+
+/* =====================================
+   LISTA DE PARTICIPANTES
+===================================== */
+
+.participant-list {
+    list-style: none;
+
+    margin-top: 12px;
+}
+
+.participant-item {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    padding: 13px 5px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+
+    font-size: 13px;
+}
+
+.participant-name {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    overflow-wrap: anywhere;
+}
+
+.participant-avatar {
+    width: 32px;
+
+    height: 32px;
+
+    min-width: 32px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: rgba(217, 182, 109, 0.13);
+
+    color: var(--gold-light);
+}
+
+.remove-button {
+    border: none;
+
+    background: transparent;
+
+    color: #e78b8b;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    padding: 5px 10px;
+}
+
+.remove-button:hover {
+    color: #ffb0b0;
+}
+
+.empty-list {
+    padding: 20px 5px;
+
+    text-align: center;
+
+    color: #9bb0a1;
+
+    font-size: 12px;
+}
+
+/* =====================================
+   AVISOS
+===================================== */
+
+.warning-message,
+.important-message {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    padding: 14px;
+
+    margin-top: 22px;
+
+    border: 1px solid rgba(217, 182, 109, 0.2);
+
+    border-radius: 8px;
+
+    background: rgba(217, 182, 109, 0.07);
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+.important-message strong {
+    color: var(--gold-light);
+}
+
+.important-message p {
+    margin-top: 5px;
+}
+
+/* =====================================
+   BOTÕES
+===================================== */
+
+.draw-button {
+    width: 100%;
+
+    margin-top: 22px;
+
+    padding: 17px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: linear-gradient(
+        135deg,
+        #b88b43,
+        #edda9a
+    );
+
+    color: #173426;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.draw-button:hover:not(:disabled) {
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 25px rgba(217, 182, 109, 0.2);
+}
+
+.draw-button:disabled {
+    opacity: 0.45;
+
+    cursor: not-allowed;
+}
+
+.small-note {
+    text-align: center;
+
+    margin-top: 12px;
+
+    color: #8fa99a;
+
+    font-size: 10px;
+
+    line-height: 1.6;
+}
+
+/* =====================================
+   PAINEL DE RESULTADOS
+===================================== */
+
+.success-icon {
+    text-align: center;
+
+    font-size: 45px;
+}
+
+.results-title {
+    text-align: center;
+
+    margin-top: 10px;
+
+    color: var(--gold-light);
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 28px;
+}
+
+.results-description {
+    max-width: 420px;
+
+    margin: 10px auto 25px;
+
+    text-align: center;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+/* =====================================
+   LINK ÚNICO
+===================================== */
+
+.shared-link-box {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+
+    padding: 20px;
+
+    margin-top: 25px;
+
+    border: 1px solid rgba(217, 182, 109, 0.3);
+
+    border-radius: 10px;
+
+    background: #102f25;
+}
+
+.shared-link-heading {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.shared-link-heading > span {
+    font-size: 25px;
+}
+
+.shared-link-heading strong {
+    display: block;
+
+    color: var(--gold-light);
+
+    font-size: 11px;
+
+    letter-spacing: 1.5px;
+}
+
+.shared-link-heading small {
+    display: block;
+
+    margin-top: 5px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+.shared-link-box input {
+    width: 100%;
+
+    min-width: 0;
+
+    padding: 14px;
+
+    border: 1px solid rgba(217, 182, 109, 0.4);
+
+    border-radius: 7px;
+
+    background: #09251c;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    outline: none;
+}
+
+.shared-link-box .draw-button {
+    margin-top: 0;
+}
+
+.share-family-button {
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #207b4b;
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.share-family-button:hover {
+    background: #29965c;
+
+    transform: translateY(-2px);
+}
+
+/* =====================================
+   RESULTADO DO PARTICIPANTE
+===================================== */
+
+.result-panel {
+    text-align: center;
+
+    padding: 45px 25px;
+
+    border-color: var(--gold);
+}
+
+.result-decoration {
+    font-size: 40px;
+
+    margin-bottom: 20px;
+}
+
+.result-eyebrow {
+    color: var(--gold);
+
+    letter-spacing: 3px;
+
+    font-size: 10px;
+}
+
+.result-panel h2 {
+    margin-top: 15px;
+
+    color: var(--gold-light);
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 27px;
+}
+
+.result-message {
+    max-width: 380px;
+
+    margin: 22px auto;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+/* =====================================
+   FORMULÁRIO DE REVELAÇÃO
+===================================== */
+
+.lookup-form {
+    max-width: 430px;
+
+    margin: 25px auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    text-align: left;
+}
+
+.lookup-form input {
+    width: 100%;
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+.lookup-form .draw-button {
+    margin-top: 5px;
+}
+
+.lookup-error {
+    max-width: 430px;
+
+    margin: 15px auto;
+
+    padding: 13px;
+
+    border-radius: 7px;
+
+    background: rgba(169, 54, 61, 0.2);
+
+    color: #ffb7b7;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+/* =====================================
+   REVELAÇÃO
+===================================== */
+
+.revealed-result {
+    margin-top: 30px;
+
+    animation: reveal 0.7s ease;
+}
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+.result-gift {
+    margin: 25px 0;
+
+    font-size: 60px;
+
+    animation: floating 3s ease-in-out infinite;
+}
+
+.revealed-result > p:first-of-type {
+    margin-bottom: 15px;
+
+    color: var(--gold-light);
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 19px;
+}
+
+.friend-name {
+    padding: 20px 10px;
+
+    border: 1px solid rgba(217, 182, 109, 0.45);
+
+    border-radius: 10px;
+
+    background: rgba(217, 182, 109, 0.09);
+
+    color: var(--gold-light);
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(28px, 7vw, 42px);
+
+    font-weight: 700;
+
+    overflow-wrap: anywhere;
+}
+
+.result-footer {
+    margin-top: 30px;
+
+    color: #8fa99a;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+/* =====================================
+   MENSAGEM FINAL E RODAPÉ
+===================================== */
+
+.footer-message {
+    margin: 35px auto;
+
+    text-align: center;
+
+    color: var(--gold-light);
+
+    font-family: 'Playfair Display', serif;
+
+    font-style: italic;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+.footer-message span {
+    margin: 0 8px;
+
+    color: var(--gold);
+}
+
+.footer {
+    padding: 25px 15px;
+
+    text-align: center;
+
+    color: #8fa99a;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+}
+
+/* =====================================
+   NOTIFICAÇÕES
+===================================== */
+
+.toast {
+    position: fixed;
+
+    bottom: 25px;
+
+    left: 50%;
+
+    transform: translate(-50%, 20px);
+
+    padding: 13px 20px;
+
+    border-radius: 8px;
+
+    background: #e9d18d;
+
+    color: #173426;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: 0.3s;
+
+    z-index: 10;
+
+    width: max-content;
+
+    max-width: 90%;
+
+    text-align: center;
+}
+
+.toast.show {
+    opacity: 1;
+
+    transform: translate(-50%, 0);
+}
+
+/* =====================================
+   RESPONSIVIDADE - CELULARES
+===================================== */
+
+@media (max-width: 600px) {
+
+    .header {
+        padding: 20px 15px;
+    }
+
+    .header-tag {
+        font-size: 8px;
+
+        letter-spacing: 1px;
+    }
+
+    .logo {
+        font-size: 11px;
+
+        letter-spacing: 2px;
+    }
+
+    .container {
+        margin-top: 20px;
+
+        padding: 0 14px;
+    }
+
+    .hero {
+        padding: 45px 18px;
+    }
+
+    .hero-decoration {
+        right: 18px;
+
+        top: 20px;
+    }
+
+    .hero h2 {
+        font-size: 21px;
+    }
+
+    .hero-description {
+        font-size: 13px;
+    }
+
+    .panel {
+        padding: 22px 16px;
+    }
+
+    .input-group {
+        flex-direction: column;
+    }
+
+    .input-group input {
+        width: 100%;
+
+        padding: 15px;
+    }
+
+    .add-button {
+        padding: 14px;
+    }
+
+    .shared-link-box {
+        padding: 14px;
+    }
+
+    .shared-link-box input {
+        font-size: 10px;
+    }
+
+    .share-family-button {
+        line-height: 1.6;
+    }
+
+    .result-panel {
+        padding: 35px 18px;
+    }
+
+    .footer-message {
+        font-size: 12px;
+    }
+}
+
+/* =====================================
+   ACESSIBILIDADE
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+    }
+
+}
